@@ -1,5 +1,8 @@
 package io.ravneet.springbean;
 
+import lombok.Data;
+
+@Data
 public class BMW {
 
     private String model;

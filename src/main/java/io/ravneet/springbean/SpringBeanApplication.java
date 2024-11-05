@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.xml.namespace.QName;
+
 //@SpringBootApplication
 public class SpringBeanApplication {
 
@@ -22,6 +24,15 @@ public class SpringBeanApplication {
 		Employee bean = context.getBean(Employee.class);
 
 		System.out.println(bean);
+
+		DieselEngine de = context.getBean(DieselEngine.class);
+		System.out.println(de);
+		BMW m3 = context.getBean("m3",BMW.class);
+		BMW m5 = context.getBean("m5",BMW.class);
+		System.out.println(" M3 "+m3);
+		System.out.println(" M5 "+ m5);
+
+
 
 	}
 
