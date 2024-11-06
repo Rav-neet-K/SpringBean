@@ -3,12 +3,22 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <bean class="io.ravneet.springbean.Employee" name="employee">
-        <constructor-arg name="fname" value="R"></constructor-arg>
-        <constructor-arg name="lname" value="K"></constructor-arg>
-        <constructor-arg name="company" value="Google"></constructor-arg>
+    <bean name="employee" class="io.ravneet.springbean.Employee">
+        <property name="fname" value="R"></property>
+        <property name="lname" value="Kaur"></property>
     </bean>
+
+    <bean name="empDAO" class="io.ravneet.springbean.EmployeeDAo" init-method="establishConnection" destroy-method="releaseConnection">
+        <constructor-arg name="url" value="jdbc:oracle:172.68.52.3:1521"></constructor-arg>
+        <constructor-arg name="username" value="sysadmin"></constructor-arg>
+        <constructor-arg name="pass" value="a7s8f7sd8fHgFF9(*^gGjGHjkk"></constructor-arg>
+    </bean>
+
+<!--    <bean class="io.ravneet.springbean.Employee" name="employee">-->
+<!--        <constructor-arg name="fname" value="R"></constructor-arg>-->
+<!--        <constructor-arg name="lname" value="K"></constructor-arg>-->
+<!--        <constructor-arg name="company" value="Google"></constructor-arg>-->
+<!--    </bean>-->
 
     <bean class="io.ravneet.springbean.BMW" name="m3">
         <constructor-arg name="model" value="m3"></constructor-arg>

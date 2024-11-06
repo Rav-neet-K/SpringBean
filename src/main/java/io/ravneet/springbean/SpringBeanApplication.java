@@ -3,6 +3,7 @@ package io.ravneet.springbean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.xml.namespace.QName;
@@ -19,8 +20,13 @@ public class SpringBeanApplication {
 
 
 //		xml configuration application context
-		ApplicationContext context= new ClassPathXmlApplicationContext("bean.xml");
+//		ApplicationContext context= new ClassPathXmlApplicationContext("bean.xml");
 
+
+		ConfigurableApplicationContext context= new ClassPathXmlApplicationContext("bean.xml");
+
+
+		context.registerShutdownHook();
 		Employee bean = context.getBean(Employee.class);
 
 		System.out.println(bean);
